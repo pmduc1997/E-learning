@@ -1,0 +1,40 @@
+<div>
+    <div class="section-1">
+        <p class="section-header">Thông tin cá nhân</p>
+        <div class="info">
+            <div class="img-picker" nz-col nzSpan="4">
+                <img class="img" src="http://fit.mta.edu.vn/Images/Portraits/Thanh(2019427179).jpg">
+                <p>Cập nhật ảnh</p>
+            </div>
+            <div class="basics" nz-col nzSpan="20" [formGroup]="profileForm">
+                <div class="form-group">
+                    <nz-form-label [nzSm]="4" nzRequired>Họ và tên</nz-form-label>
+                    <input nz-input formControlName="fullname" />
+                </div>
+                <div nz-row>
+                    <div class="form-group" nz-col nzSpan="12">
+                        <nz-form-label [nzSm]="8" nzRequired>Ngày sinh</nz-form-label>
+                        <nz-date-picker formControlName="birth" [nzFormat]="DD-MM-yyyy"></nz-date-picker>
+                    </div>
+                    <div class="form-group" nz-col nzSpan="12">
+                        <nz-form-label [nzSm]="8" nzRequired>Giới tính</nz-form-label>
+                        <nz-select  formControlName="gender">
+                            <nz-option nzValue="male" nzLabel="Nam"></nz-option>
+                            <nz-option nzValue="female" nzLabel="Nữ"></nz-option>
+                        </nz-select>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <nz-form-label [nzSm]="4" nzRequired>Email HVKTQS</nz-form-label>
+                    <input nz-input  formControlName="emailHV" />
+                </div>
+                <div class="form-group">
+                    <nz-form-label [nzSm]="4" nzRequired>Email khác</nz-form-label>
+                    <input nz-input  formControlName="email" />
+                </div>
+            </div>
+        </div>
+        <button nz-button nzType="primary" (click)="_onSubmit()">Cập nhật</button>
+    </div>
+</div>

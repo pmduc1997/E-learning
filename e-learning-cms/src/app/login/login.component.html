@@ -1,0 +1,24 @@
+<div class="view">
+    <img class="logo"
+        src="http://mri.vimaru.edu.vn/sites/mri.vimaru.edu.vn/files/Le_Quy_Don_Technical_University_logo.jpg">
+    <div class="login-box">
+        <div class="credentials container">
+            <div class="form-group">
+                <label class="label">Username</label>
+                <input type="text" class="form-control" [(ngModel)]="credentials.username" (keyup)="_onKey()">
+            </div>
+            <div class="form-group">
+                <label class="label">Password</label>
+                <input type="password" class="form-control" [(ngModel)]="credentials.password" (keyup)="_onKey()">
+            </div>
+        </div>
+        <div class="more container">
+            <div class="remember">
+                <input type="checkbox" class="checkbox">
+                <label class="label">Remember me</label>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="_onLogin()">Log In</button>
+        </div>
+    </div>
+    <label class="forgot">Forgot password ?</label>
+</div>

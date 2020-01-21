@@ -1,0 +1,57 @@
+.view {
+    display: flex;
+    background-color: #eeeeee;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+.container{
+    padding: 0px;
+}
+
+.logo {
+    height: 170px;
+    margin-top: 5%;
+    margin-bottom: 50px;
+}
+
+.login-box {
+    width: 400px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    padding-bottom: 50px;
+    border: 1px solid;
+    border-color: #e0e0e0;
+    box-shadow: 2px 2px 10px #888888;
+}
+.form-group{
+    margin-bottom: 30px;
+}
+.more {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox {
+    margin-right: 5px;
+}
+
+.label {
+    margin: 0px;
+}
+
+.forgot {
+    width: 400px;
+    padding-left: 30px;
+    margin-top: 20px;
+}

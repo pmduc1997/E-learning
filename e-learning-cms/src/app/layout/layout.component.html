@@ -1,0 +1,43 @@
+<nz-layout class="left-layout">
+    <nz-sider nzTheme="light">
+        <div class="logo">
+            <img src="http://fit.mta.edu.vn/sysimage/Logo50.jpg" alt="">
+            <p class="logo-text">MTA</p>
+        </div>
+        <ul nz-menu nzTheme="light" nzMode="inline">
+            <nz-divider class="divider"></nz-divider>
+            <li class="sider-option avatar" nz-menu-item routerLink="profile" routerLinkActive="router-link-active">
+                <nz-avatar class="avatar-img" [nzSize]="38"
+                    nzSrc="http://fit.mta.edu.vn/Images/Portraits/Thanh(2019427179).jpg">
+                </nz-avatar>
+                <p class="username">Tạ Minh Thanh</p>
+            </li>
+            <nz-divider class="divider"></nz-divider>
+            <li class="sider-option" nz-menu-item nzSelected routerLink="./">
+                <i nz-icon nzType="dashboard"></i>
+                <span>Bài giảng</span>
+            </li>
+            <li class="sider-option" nz-menu-item routerLink="users">
+                <i nz-icon nzType="user"></i>
+                <span>Lớp học</span>
+            </li>
+            <nz-divider class="divider"></nz-divider>
+            <li class="sider-option" nz-menu-item>
+                <i nz-icon nzType="setting"></i>
+                <span>Cài đặt</span>
+            </li>
+            <li class="sider-option" nz-menu-item (click)="_onLogout()">
+                <i nz-icon nzType="upload"></i>
+                <span>Đăng xuất</span>
+            </li>
+        </ul>
+    </nz-sider>
+    <nz-layout class="right-layout">
+        <nz-content>
+            <div class="inner-content">
+                <router-outlet></router-outlet>
+            </div>
+        </nz-content>
+        <nz-footer>E-learning ©2020 Bản quyền bởi nhóm AB trương</nz-footer>
+    </nz-layout>
+</nz-layout>
