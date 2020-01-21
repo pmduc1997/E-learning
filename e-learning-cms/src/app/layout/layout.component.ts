@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-
+  isVisible = false;
   constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -15,5 +15,16 @@ export class LayoutComponent implements OnInit {
   _onLogout() {
     this.authService.logout()
     this.router.navigate(['/login']);
+  }
+  _showModal(): any {
+    this.isVisible = true;
+  }
+  _onOk(): any {
+    this._onLogout()
+    this.isVisible = false;
+  }
+
+  _onCancel(): any {
+    this.isVisible = false;
   }
 }
