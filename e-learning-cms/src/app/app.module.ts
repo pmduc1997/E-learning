@@ -16,6 +16,7 @@ import en from '@angular/common/locales/en';
 import { ProfileComponent } from './profile/profile.component';
 import { LessonsComponent } from './lessons/lessons.component';
 import { ClassesComponent } from './classes/classes.component';
+import { LessonsAddComponent } from './lessons-add/lessons-add.component';
 
 registerLocaleData(en);
 
@@ -28,7 +29,8 @@ registerLocaleData(en);
     UsersComponent,
     ProfileComponent,
     LessonsComponent,
-    ClassesComponent
+    ClassesComponent,
+    LessonsAddComponent
   ],
   imports: [
     BrowserModule,

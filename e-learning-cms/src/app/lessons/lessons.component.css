@@ -1,0 +1,10 @@
+.image{
+    height: 100px;
+}
+.tools{
+    justify-content: space-around;
+    align-items: center;
+}
+.icon{
+    font-size: 16px;
+}

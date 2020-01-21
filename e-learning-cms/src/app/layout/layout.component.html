@@ -15,10 +15,19 @@
             <nz-divider class="divider"></nz-divider>
             <li class="sider-option" nz-menu-item nzSelected routerLink="./">
                 <i nz-icon nzType="dashboard"></i>
-                <span>Bài giảng</span>
+                <span>Quản trị</span>
             </li>
             <li class="sider-option" nz-menu-item routerLink="users">
                 <i nz-icon nzType="user"></i>
+                <span>Người dùng</span>
+            </li>
+            <nz-divider class="divider"></nz-divider>
+            <li class="sider-option" nz-menu-item routerLink="lessons">
+                <i nz-icon nzType="read"></i>
+                <span>Bài giảng</span>
+            </li>
+            <li class="sider-option" nz-menu-item routerLink="classes">
+                <i nz-icon nzType="team"></i>
                 <span>Lớp học</span>
             </li>
             <nz-divider class="divider"></nz-divider>
@@ -26,7 +35,7 @@
                 <i nz-icon nzType="setting"></i>
                 <span>Cài đặt</span>
             </li>
-            <li class="sider-option" nz-menu-item (click)="_onLogout()">
+            <li class="sider-option" nz-menu-item (click)="_showModal()">
                 <i nz-icon nzType="upload"></i>
                 <span>Đăng xuất</span>
             </li>
@@ -41,3 +50,6 @@
         <nz-footer>E-learning ©2020 Bản quyền bởi nhóm AB trương</nz-footer>
     </nz-layout>
 </nz-layout>
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Đăng xuất" (nzOnCancel)="_onCancel()" (nzOnOk)="_onOk()">
+    Bạn có muốn đăng xuất ?
+</nz-modal>

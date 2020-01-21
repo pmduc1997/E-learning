@@ -1,0 +1,31 @@
+<nz-steps [nzCurrent]="steps" (nzIndexChange)="onIndexChange($event)">
+    <nz-step nzTitle="Chọn lớp học"></nz-step>
+    <nz-step nzTitle="Tạo bài giảng"></nz-step>
+    <nz-step nzTitle="Xác nhận"></nz-step>
+</nz-steps>
+<div class="step-container">
+    <div *ngIf="steps === 0">
+        <nz-tree-select
+        class="tree-select"
+          style="width: 100%"
+          nzPlaceHolder="Please select"
+          [(ngModel)]="value"
+          [nzMaxTagCount]="10"
+          [nzMaxTagPlaceholder]="omittedPlaceHolder"
+          [nzNodes]="nodes"
+          [nzDefaultExpandAll]="true"
+          [nzAllowClear]="false"
+          [nzMultiple]="true"
+          (ngModelChange)="onChange($event)"
+        >
+        </nz-tree-select>
+    </div>
+    <div *ngIf="steps === 1">
+        
+    </div>
+    <div *ngIf="steps === 2">
+        
+        test3
+    </div>
+
+</div>

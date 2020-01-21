@@ -7,6 +7,9 @@ import { LayoutComponent } from './layout/layout.component'
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { ProfileComponent } from './profile/profile.component'
+import { LessonsComponent } from './lessons/lessons.component'
+import { ClassesComponent } from './classes/classes.component';
+import { LessonsAddComponent } from './lessons-add/lessons-add.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -25,7 +28,19 @@ const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent
-      }
+      },
+      {
+        path: 'lessons',
+        component: LessonsComponent
+      },
+      {
+        path: 'classes',
+        component: ClassesComponent
+      },
+      {
+        path: 'lessons-add',
+        component: LessonsAddComponent
+      },
     ]
   }
 ];
