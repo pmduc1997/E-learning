@@ -19,6 +19,7 @@ nz-sider {
 
 .right-layout {
     margin-left: 200px;
+    padding: 30px;
 }
 
 nz-header {
@@ -34,6 +35,8 @@ nz-content {
 .inner-content {
     padding: 24px;
     background: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 nz-footer {
@@ -62,4 +65,10 @@ nz-footer {
 .username {
     font-weight: 600;
     font-size: 14px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }

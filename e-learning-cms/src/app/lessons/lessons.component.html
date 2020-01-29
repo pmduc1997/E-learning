@@ -1,5 +1,8 @@
-<button nz-button nzType="primary" routerLink="../lessons-add">Tạo bài giảng</button>
-<nz-table [nzData]="data" [nzBordered]="true">
+<button nz-button nzType="primary" routerLink="../lessons-add" class="lessons-add-btn">
+    <i nz-icon nzType="file-add" nzTheme="outline"></i>
+    <p>Tạo bài giảng</p>
+</button>
+<nz-table #rowSelectionTable [nzData]="data" [nzBordered]="true">
     <thead>
         <tr>
             <th style="width: 5%;">STT</th>
@@ -7,19 +10,22 @@
             <th style="width: 30%;">Tên bài giảng</th>
             <th style="width: 25%;">Môn học</th>
             <th style="width: 15%;">Thời gian tạo</th>
-            <th style="width: 10%;text-align: center;">Tác vụ</th>
+            <th style="width: 10%;">Tác vụ</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of data;let i = index">
-            <td>{{i+1}}</td>
+        <tr *ngFor="let item of rowSelectionTable.data;let i = index">
+            <td style="text-align: center;">{{i+1}}</td>
             <td><img src={{item.image}} class="image"></td>
             <td>{{item.name}}</td>
             <td>{{item.subject}}</td>
             <td>{{item.updatedAt}}</td>
-            <td class="tools">
-                <i class="icon" nz-icon nzType="edit" [nzTheme]="'twotone'" [nzTwotoneColor]="'#005f27'" (click)="_onEdit(item.key)"></i>
-                <i class="icon" nz-icon nzType="delete" [nzTheme]="'twotone'" [nzTwotoneColor]="'#ef5350'"></i>
+            <td>
+                <div class="tools-inner">
+                    <i class="icon" nz-icon nzType="edit" [nzTheme]="'twotone'" [nzTwotoneColor]="'#005f27'"
+                        (click)="_onEdit(item.key)"></i>
+                    <i class="icon" nz-icon nzType="delete" [nzTheme]="'twotone'" [nzTwotoneColor]="'#ef5350'"></i>
+                </div>
             </td>
         </tr>
     </tbody>

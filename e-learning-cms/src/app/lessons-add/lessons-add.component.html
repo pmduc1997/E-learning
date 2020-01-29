@@ -1,3 +1,5 @@
+
+<a routerLink="../lessons">Quay lại</a>
 <nz-steps [nzCurrent]="steps" (nzIndexChange)="onIndexChange($event)">
     <nz-step nzTitle="Chọn lớp học"></nz-step>
     <nz-step nzTitle="Tạo bài giảng"></nz-step>
@@ -7,15 +9,13 @@
     <div *ngIf="steps === 0">
         <nz-tree-select
         class="tree-select"
-          style="width: 100%"
-          nzPlaceHolder="Please select"
-          [(ngModel)]="value"
-          [nzMaxTagCount]="10"
-          [nzMaxTagPlaceholder]="omittedPlaceHolder"
           [nzNodes]="nodes"
+          [(ngModel)]="value"
+          nzPlaceHolder="Chọn lớp học cho tài liệu"
           [nzDefaultExpandAll]="true"
           [nzAllowClear]="false"
           [nzMultiple]="true"
+          [nzShowLine]="true"
           (ngModelChange)="onChange($event)"
         >
         </nz-tree-select>

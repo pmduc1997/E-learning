@@ -1,10 +1,19 @@
-.image{
+.image {
     height: 100px;
 }
-.tools{
+
+.tools-inner{
+    display:flex;
     justify-content: space-around;
-    align-items: center;
 }
-.icon{
-    font-size: 16px;
+.icon {
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.lessons-add-btn {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
 }

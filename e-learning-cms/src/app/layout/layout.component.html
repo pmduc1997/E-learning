@@ -42,12 +42,10 @@
         </ul>
     </nz-sider>
     <nz-layout class="right-layout">
-        <nz-content>
-            <div class="inner-content">
-                <router-outlet></router-outlet>
-            </div>
-        </nz-content>
-        <nz-footer>E-learning ©2020 Bản quyền bởi nhóm AB trương</nz-footer>
+        <div class="inner-content">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="footer">E-learning ©2020 Bản quyền bởi nhóm AB trương</div>
     </nz-layout>
 </nz-layout>
 <nz-modal [(nzVisible)]="isVisible" nzTitle="Đăng xuất" (nzOnCancel)="_onCancel()" (nzOnOk)="_onOk()">

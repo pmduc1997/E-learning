@@ -13,14 +13,6 @@ export class LessonsAddComponent implements OnInit {
       key: '1',
       children: [
         {
-          title: 'Khoa cơ khí',
-          key: '11',
-          children: [
-            { title: 'leaf 1-0-0', key: '110', isLeaf: true },
-            { title: 'leaf 1-0-1', key: '111', isLeaf: true }
-          ]
-        },
-        {
           title: 'Khoa công nghệ thông tin',
           key: '12',
           children: [
@@ -32,7 +24,14 @@ export class LessonsAddComponent implements OnInit {
               ]
 
             },
-            { title: 'Bộ môn Khoa học máy tính', key: '121' },
+            {
+              title: 'Bộ môn Công nghệ mạng', key: '121',
+              children: [
+                { title: 'An ninh mạng', key: '1210', isLeaf: true },
+                { title: 'Kỹ thuật liên mạng', key: '1211', isLeaf: true }
+
+              ]
+            },
           ]
         }
       ]
@@ -47,5 +46,7 @@ export class LessonsAddComponent implements OnInit {
   onIndexChange(index: number): void {
     this.steps = index;
   }
-
+  onChange($event: string[]): void {
+    console.log($event);
+  }
 }
