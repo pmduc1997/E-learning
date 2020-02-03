@@ -11,25 +11,15 @@
 }
 
 nz-sider {
-    overflow: auto;
     height: 100%;
-    position: fixed;
-    left: 0;
 }
 
 .right-layout {
-    margin-left: 200px;
     padding: 30px;
-}
-
-nz-header {
-    background: #fff;
-    padding: 0;
 }
 
 nz-content {
     margin: 24px 16px 0;
-    overflow: initial;
 }
 
 .inner-content {

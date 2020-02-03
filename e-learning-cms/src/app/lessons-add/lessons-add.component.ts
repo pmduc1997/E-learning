@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-lessons-add',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LessonsAddComponent implements OnInit {
   value: string[] = [];
-  nodes = [
+  subjects = [
     {
       title: 'Đại học',
       key: '1',
@@ -36,17 +37,86 @@ export class LessonsAddComponent implements OnInit {
         }
       ]
     }
-  ];
+  ]
 
+  profileForm: any;
+  data = {
+    name: '',
+    image: 'https://cafefcdn.com/thumb_w/650/2020/1/4/criptomoedas-01-2869-1562141554-15781308700851407088675-crop-1578805366512246274309.png',
+    description: '',
+    subject: '',
+    sections: [
+      {
+        name: '',
+        curriculums: [
+          {
+            name: '',
+            type: 'video',
+          },
+        ]
+      },
+    ]
+  }
   steps = 0;
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.profileForm = this.fb.group({
+      name: new FormControl({ value: this.data.name, disabled: false }),
+      image: new FormControl({ value: this.data.image, disabled: false }),
+      description: new FormControl({ value: this.data.description, disabled: false }),
+      subject: new FormControl({ value: this.data.subject, disabled: false }),
+    });
   }
-  onIndexChange(index: number): void {
+
+  //steps function
+  _onStepChange(index: number): void {
     this.steps = index;
   }
-  onChange($event: string[]): void {
+  pre(): void {
+    this.steps -= 1;
+  }
+
+  next(): void {
+    this.steps += 1;
+  }
+  done(): void {
+    console.log(this.data);
+  }
+  //tree view function
+  _onTreeChange($event: string[]): void {
     console.log($event);
+  }
+  //section curriculum function
+  _onSectionAdd() {
+    let section: any = {
+      name: '',
+      curriculums: [
+        {
+          name: '',
+          type: 'video',
+        },
+      ]
+    }
+    this.data.sections.push(section)
+  }
+  _onCurriculumAdd(i: any) {
+    let curriculum: any = {
+      name: '',
+      type: 'video'
+    }
+    this.data.sections[i].curriculums.push(curriculum)
+  }
+  _onSectionRemove(i) {
+    this.data.sections.splice(i, 1)
+
+  }
+  _onCurriculumRemove(i, j) {
+    this.data.sections[i].curriculums.splice(j, 1)
+  }
+  //
+
+  _test() {
+    console.log(this.data)
   }
 }

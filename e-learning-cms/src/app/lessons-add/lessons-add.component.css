@@ -1,6 +1,60 @@
 .tree-select {
     width: 100%;
 }
-.step-container{
-    padding:50px;
+
+.step-container {}
+
+.form-group {
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    height: 175px;
+}
+
+.img-picker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.steps-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.section {
+    padding: 20px;
+    border: solid;
+    border-width: 1px;
+    border-color: #bdbdbd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.section-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.delete-icon {
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.steps-action {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.radio {
+    justify-content: space-around;
+}
+.options{
+    display: flex;
 }

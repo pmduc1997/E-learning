@@ -12,7 +12,8 @@ export class ProfileComponent implements OnInit {
     birth: '01-08-1997',
     gender: 'male',
     emailHV: 'taminhthanh@mta.edu.vn',
-    email: 'taminhthanh@gmail.com'
+    email: 'taminhthanh@gmail.com',
+    avatar:'http://fit.mta.edu.vn/Images/Portraits/Thanh(2019427179).jpg'
   }
   profileForm: any;
   dataSubmit: any;
@@ -25,7 +26,8 @@ export class ProfileComponent implements OnInit {
       birth: new FormControl({ value: this.data.birth, disabled: false }),
       gender: new FormControl({ value: this.data.gender, disabled: false }),
       emailHV: new FormControl({ value: this.data.emailHV, disabled: false }),
-      email: new FormControl({ value: this.data.email, disabled: false })
+      email: new FormControl({ value: this.data.email, disabled: false }),
+      avatar: new FormControl({ value: this.data.avatar, disabled: false }),
     });
   }
 
@@ -33,6 +35,8 @@ export class ProfileComponent implements OnInit {
     this.dataSubmit = this.profileForm.value
     console.log(this.dataSubmit)
   }
-
+  _onUploadImg(){
+    $('.uploadImg').click()
+  }
 
 }

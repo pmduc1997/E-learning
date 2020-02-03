@@ -2,3 +2,17 @@
 p {
     margin: 0;
 }
+button {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.button{
+    display: flex;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+}

@@ -1,1 +1,27 @@
-<p>classes works!</p>
+Lớp học đang giảng dạy
+<nz-table #rowSelectionTable [nzData]="data" [nzBordered]="true">
+    <thead>
+        <tr>
+            <th style="width: 5%;">STT</th>
+            <th style="width: 30%;">Lớp</th>
+            <th style="width: 25%;">Môn học</th>
+            <th style="width: 15%;">Thời gian tạo</th>
+            <th style="width: 10%;">Tác vụ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of rowSelectionTable.data;let i = index">
+            <td style="text-align: center;">{{i+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.subject}}</td>
+            <td>{{item.updatedAt}}</td>
+            <td>
+                <div class="tools-inner">
+                    <i class="icon" nz-icon nzType="edit" [nzTheme]="'twotone'" [nzTwotoneColor]="'#005f27'"
+                        (click)="_onEdit(item.key)"></i>
+                    <i class="icon" nz-icon nzType="delete" [nzTheme]="'twotone'" [nzTwotoneColor]="'#ef5350'"></i>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</nz-table>
