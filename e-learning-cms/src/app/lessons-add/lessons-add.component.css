@@ -2,7 +2,7 @@
     width: 100%;
 }
 
-.step-container {}
+
 
 .form-group {
     display: flex;
@@ -55,6 +55,5 @@
 .radio {
     justify-content: space-around;
 }
-.options{
-    display: flex;
+.option{
 }

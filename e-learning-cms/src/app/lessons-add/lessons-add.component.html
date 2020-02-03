@@ -6,7 +6,7 @@
         <nz-step nzTitle="Xác nhận"></nz-step>
     </nz-steps>
 </div>
-<div class="step-container">
+<div class="step">
     <!-- first step -->
     <div *ngIf="steps === 0" style="display: flex;">
         <div class="img-picker" nz-col nzSpan="6">
@@ -51,27 +51,33 @@
                     <nz-radio-group class="form-group radio" [(ngModel)]="curriculum.type">
                         <label nz-radio nzValue="video">Video</label>
                         <label nz-radio nzValue="doc">Tài liệu</label>
-                        <label nz-radio nzValue="qa">Câu hỏi</label>
                     </nz-radio-group>
-                    <div class="options">
-                        <div *ngIf="curriculum.type=='video'">
-                            Nhập đường dẫn
-                            <input nz-input [(ngModel)]="curriculum.name" />
-                        </div>
-                        <div *ngIf="curriculum.type=='doc'">
-                            Up tài liệu
-                            <input nz-input [(ngModel)]="curriculum.name" />
-                        </div>
-                        <div *ngIf="curriculum.type=='qa'">
-                            <button nz-button nzType="primary" class="button" (click)="_onQuestionAdd()">
-                                Tạo câu hỏi
+                    <div *ngIf="curriculum.type=='video'" class="option">
+                        <div class="form-group">
+                            <nz-form-label  [nzSm]="2">Nhập đường dẫn</nz-form-label>
+                            <input nz-input [(ngModel)]="curriculum.url" />
+                            <button nz-button nzType="primary" class="button">
+                                Preview
                             </button>
                         </div>
                     </div>
+                    <div *ngIf="curriculum.type=='doc'" class="option">
+                        <div class="form-group">
+                            <nz-form-label  [nzSm]="2">Upload tài liệu</nz-form-label>
+                            <input nz-input [(ngModel)]="curriculum.url" />
+                            <button nz-button nzType="primary" class="button">
+                                Preview
+                            </button>
+                        </div>
+                    </div>
+                    <nz-divider class="divider"></nz-divider>
 
                 </div>
-                <button (click)="_onCurriculumAdd(i)">Thêm nội dung</button>
+                <button nz-button nzType="primary" class="button" (click)="_onCurriculumAdd(i)">
+                    Thêm nội dung
+                </button>
             </div>
+            <nz-divider class="divider"></nz-divider>
         </div>
         <button nz-button nzType="primary" class="button" (click)="_onSectionAdd()">
             <i nz-icon nzType="plus"></i>

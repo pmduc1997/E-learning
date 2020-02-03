@@ -12,7 +12,8 @@ export class ClassesComponent implements OnInit {
       key: '1',
       name: 'Mạng máy tính',
       subject:'Cơ sở dữ liệu',
-      updatedAt:'2020-17-1'
+      updatedAt:'2020-17-1',
+      
     },
   ];
   constructor() { }
